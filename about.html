@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Lola Perfume & Co</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar (copied from index.html) -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <!-- Logo Section -->
+        <div class="logo">
+          <img src="/images/logo.png" alt="Lola Logo" class="logo-image" />
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="home.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+          
+          <!-- Register Button for Mobile -->
+          <li class="nav-item mobile-register">
+            <button class="register-btn">Register</button>
+          </li>
+        </ul>
+
+        <!-- Register Button for Desktop -->
+        <div class="register-section">
+          <button class="register-btn">Register</button>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="about-hero-container">
+        <div class="about-hero-header">
+          <h1 class="about-hero-title">About Us</h1>
+        </div>
+        
+        <div class="about-hero-content">
+          <div class="about-hero-image">
+            <img src="/images/perfume bg-Photoroom 1.png" alt="Perfume bottles with pink flowers" />
+          </div>
+          
+          <div class="about-hero-text">
+            <div class="about-hero-description">
+              <p>At our core, we believe that fragrance is a powerful form of self-expression. Our journey began with a simple desire — to make high-quality, luxury-inspired perfumes accessible to everyone. Each scent we create is a blend of artistry and emotion, designed to evoke memories, moods, and moments that define who we are. From sourcing the finest ingredients to collaborating with master perfumers, every step in our process is intentional. We take pride in crafting perfumes that are both timeless and modern — scents that not only smell incredible but also tell a story. With elegant packaging and exceptional staying power, our perfumes are made to elevate your daily rituals.</p>
+            </div>
+            
+            <div class="about-mission-section">
+              <h2 class="about-mission-title">our mission</h2>
+              <p class="about-mission-text">Our mission is to democratize the luxury of fragrance. We are committed to delivering beautifully crafted perfumes that inspire confidence, spark connection, and celebrate individuality — all while maintaining ethical practices and sustainable choices. Because everyone deserves to smell unforgettable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section (reused from index.html) -->
+    <section class="newsletter-section">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <h2 class="newsletter-title">Join the Fragrance Circle</h2>
+          <p class="newsletter-subtitle">Be the first to discover new scents, exclusive offers, and timeless elegance — right to your inbox.</p>
+          
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email..." required>
+              <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section (reused from index.html) -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <!-- Logo and Description -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="/images/white-logo.png" alt="Lola Logo" class="footer-logo-image">
+            </div>
+            <p class="footer-description">
+              Lola Perfume & Co crafts elegant, timeless fragrances that celebrate individuality. Each scent is designed to inspire, captivate, and leave a lasting impression.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-menu">
+              <li><a href="about.html" class="footer-link">About</a></li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+              <li><a href="#" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Company Links -->
+          <div class="footer-links">
+            <h4 class="footer-heading">Company</h4>
+            <ul class="footer-menu">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+              <li><a href="#" class="footer-link">Plans & features</a></li>
+              <li><a href="#" class="footer-link">Cancellations & refunds</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-divider"></div>
+          <p class="footer-copyright">Copyright © 2025 lolaperfumes.com - All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle functionality
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+
+      // Newsletter form submission
+      const newsletterForm = document.querySelector(".newsletter-form");
+      newsletterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.querySelector(".newsletter-input").value;
+        alert(`Thank you for subscribing with email: ${email}`);
+        document.querySelector(".newsletter-input").value = "";
+      });
+    </script>
+
+    <style>
+      /* About Hero Section Styles */
+      .about-hero {
+        padding: 120px 0 80px 0;
+        background-color: white;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .about-hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .about-hero-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .about-hero-title {
+        font-size: 3rem;
+        font-weight: 400;
+        color: #333;
+        font-family: 'Cormorant Garamond', serif;
+        position: relative;
+        display: inline-block;
+        margin: 0;
+      }
+
+      .about-hero-title::before,
+      .about-hero-title::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 100px;
+        height: 1px;
+        background-color: #9A5268;
+      }
+
+      .about-hero-title::before {
+        left: -120px;
+      }
+
+      .about-hero-title::after {
+        right: -120px;
+      }
+
+      .about-hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+
+      .about-hero-image {
+        width: 100%;
+      }
+
+      .about-hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .about-hero-text {
+        padding: 20px 0;
+      }
+
+      .about-hero-description {
+        margin-bottom: 50px;
+      }
+
+      .about-hero-description p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        font-weight: 300;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      .about-mission-section {
+        margin-top: 40px;
+      }
+
+      .about-mission-title {
+        font-size: 2rem;
+        font-weight: 400;
+        color: #333;
+        margin-bottom: 25px;
+        font-family: 'Cormorant Garamond', serif;
+        text-transform: lowercase;
+      }
+
+      .about-mission-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        font-weight: 300;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      /* Mobile Responsive for About Hero */
+      @media screen and (max-width: 1000px) {
+        .about-hero-content {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        .about-hero-title::before,
+        .about-hero-title::after {
+          width: 80px;
+        }
+
+        .about-hero-title::before {
+          left: -100px;
+        }
+
+        .about-hero-title::after {
+          right: -100px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .about-hero {
+          padding: 100px 0 60px 0;
+        }
+
+        .about-hero-header {
+          margin-bottom: 40px;
+        }
+
+        .about-hero-title {
+          font-size: 2.5rem;
+        }
+
+        .about-hero-title::before,
+        .about-hero-title::after {
+          display: none;
+        }
+
+        .about-hero-content {
+          gap: 40px;
+        }
+
+        .about-hero-description {
+          margin-bottom: 40px;
+        }
+
+        .about-hero-description p,
+        .about-mission-text {
+          font-size: 1rem;
+          line-height: 1.7;
+        }
+
+        .about-mission-title {
+          font-size: 1.8rem;
+          margin-bottom: 20px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .about-hero {
+          padding: 80px 0 50px 0;
+        }
+
+        .about-hero-container {
+          padding: 0 15px;
+        }
+
+        .about-hero-title {
+          font-size: 2rem;
+        }
+
+        .about-hero-content {
+          gap: 30px;
+        }
+
+        .about-hero-description {
+          margin-bottom: 30px;
+        }
+
+        .about-hero-description p,
+        .about-mission-text {
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+
+        .about-mission-title {
+          font-size: 1.6rem;
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  </body>
+</html>
